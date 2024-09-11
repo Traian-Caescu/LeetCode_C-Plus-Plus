@@ -1,3 +1,8 @@
+/* 
+Runtime: 2 ms, faster than 98.56% of C++ online submissions.
+Memory: 8.70 MB, less than 84.34% of C++ online submissions.
+*/
+
 class Solution {
 public:
     bool isAnagram(string s, string t) {
