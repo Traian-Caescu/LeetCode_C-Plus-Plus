@@ -1,3 +1,8 @@
+/* 
+Runtime: 20 ms, faster than 74.78% of C++ online submissions.
+Memory: 25.93 MB, less than 61.51% of C++ online submissions.
+*/
+
 class Solution {
 public:
     int longestCommonSubsequence(string text1, string text2) {
