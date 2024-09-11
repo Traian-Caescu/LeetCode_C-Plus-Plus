@@ -1,0 +1,37 @@
+/* 
+Runtime: 0 ms, faster than 100.00% of C++ online submissions.
+Memory: 9.35 MB, less than 8.14% of C++ online submissions.
+*/
+
+class Solution {
+public:
+    string smallestSubsequence(string s) {
+        stack<char>st;
+        unordered_set<char>seen;
+        unordered_map<char,int>mp;
+
+        for(int i=0;i<s.length();i++){
+            mp[s[i]]=i;
+        }
+        
+        int i=0;
+        while(i<s.length()){
+           if(seen.find(s[i])==seen.end()){ 
+            while(!st.empty() && st.top()>s[i] && mp[st.top()]>i){
+                seen.erase(st.top());
+                st.pop();
+            } 
+               st.push(s[i]);
+               seen.insert(s[i]);
+           }
+            i++;
+        }
+        string track="";
+        while(!st.empty()){
+            track.push_back(st.top());
+            st.pop();
+        }
+        reverse(track.begin(),track.end());
+        return track;
+    }
+};
