@@ -3,7 +3,7 @@ Runtime: 3 ms, faster than 98.46% of C++ online submissions.
 Memory: 14.4 MB, less than 38.29% of C++ online submissions.
 */
  
-class Solution {
+class Solution { 
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
       unordered_map<int,int> mp;
