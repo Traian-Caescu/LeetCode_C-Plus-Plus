@@ -19,7 +19,7 @@ public:
            if(seen.find(s[i])==seen.end()){ 
             while(!st.empty() && st.top()>s[i] && mp[st.top()]>i){
                 seen.erase(st.top());
-                st.pop();
+                st.pop(); 
             } 
                st.push(s[i]);
                seen.insert(s[i]);
