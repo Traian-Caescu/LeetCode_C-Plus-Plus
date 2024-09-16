@@ -17,7 +17,7 @@ public:
             
             // Move the pointers towards the center
             left++;
-            right--;
+            right--; 
         }
     }
 };
