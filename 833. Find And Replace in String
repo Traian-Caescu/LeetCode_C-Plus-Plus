@@ -9,7 +9,7 @@ public:
         int n = indices.size();
  
         for (int i = 0; i < n; ++i) {
-            // Skip invalid indices
+            // Skip invalid indices 
             if (indices[i] == -1) continue;
 
             // Check if the source matches the substring at the index
