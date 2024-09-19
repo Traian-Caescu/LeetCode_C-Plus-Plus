@@ -23,7 +23,7 @@ public:
                     if (indices[j] == indices[i]) { 
                         indices[j] = -1; // Mark the overlapping index as processed
                     }
-                    else if (indices[j] > indices[i]) {
+                    else if (indices[j] > indices[i]) { 
                         indices[j] += diff; // Adjust the index if needed
                     }
                 }
