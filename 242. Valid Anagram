@@ -9,7 +9,7 @@ public:
         if(s.length() != t.length()) return false;
         
         vector<int> sHash(128, 0);
-        vector<int> tHash(128, 0);
+        vector<int> tHash(128, 0); 
  
         for (int i = 0; i < s.length(); i++) {  
             sHash[s[i]]++;
