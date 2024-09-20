@@ -4,7 +4,7 @@ Memory: 11.51 MB, less than 98.19% of C++ online submissions.
 */
 
 class Solution {
-public:
+public: 
     int countPrimes(int n) {
          if (n <= 2) return 0; // No prime numbers less than 2
          
