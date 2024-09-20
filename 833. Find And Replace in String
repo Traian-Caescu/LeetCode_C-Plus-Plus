@@ -18,7 +18,7 @@ public:
                 s.replace(indices[i], sources[i].size(), targets[i]);
  
                 // Adjust indices for subsequent replacements
-                int diff = targets[i].size() - sources[i].size();
+                int diff = targets[i].size() - sources[i].size(); 
                 for (int j = i + 1; j < n; ++j) {
                     if (indices[j] == indices[i]) { 
                         indices[j] = -1; // Mark the overlapping index as processed
