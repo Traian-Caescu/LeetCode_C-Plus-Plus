@@ -11,7 +11,7 @@ public:
         vector<bool> isPrime(n, true); // Create a boolean array of size n
         isPrime[0] = isPrime[1] = false; // 0 and 1 are not primes
 
-        // Start the sieve process
+        // Start the sieve process 
         for (int i = 2; i * i < n; i++) {
             if (isPrime[i]) {
                 for (int j = i * i; j < n; j += i) {
