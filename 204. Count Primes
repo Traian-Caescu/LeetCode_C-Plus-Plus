@@ -19,7 +19,7 @@ public:
                 }
             }
         }
- 
+  
         // Count primes
         int primeCount = 0;
         for (int i = 2; i < n; i++) { 
