@@ -5,7 +5,7 @@ Memory: 17.89 MB, less than 54.34% of C++ online submissions.
 
 class Solution {
 public:
-    int lenLongestFibSubseq(vector<int>& arr) {
+    int lenLongestFibSubseq(vector<int>& arr) { 
     unordered_map<int, int> index;  
     unordered_map<int, int> dp;     
     int max_len = 0;
