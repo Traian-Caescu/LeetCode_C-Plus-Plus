@@ -10,7 +10,7 @@ public:
             int left = i;
             int right = min(i + k - 1, (int)s.length() - 1);
             while (left < right) {
-                swap(s[left++], s[right--]);
+                swap(s[left++], s[right--]); 
             }
         }
         return s;
