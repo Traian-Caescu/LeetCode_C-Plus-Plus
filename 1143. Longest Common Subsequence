@@ -10,7 +10,7 @@ public:
         int n = text2.length(); 
         
         // Create a 2D DP table
-        vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+        vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0)); 
         
         // Fill the DP table 
         for (int i = 1; i <= m; i++) {
