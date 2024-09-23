@@ -88,22 +88,18 @@ The program ensures that no two contacts share the same email or phone number. A
 
 ### If I Had 1-2 More Weeks
 
-1. **Wildcard or Partial Matching Search**: 
-   - Currently, the search only supports exact matches. Adding partial or wildcard matching (e.g., searching for "Jo*" to match "John" or "Jonas") would make the search more flexible.
+1. **Unit Testing & Automation**:
+   - Implement automated unit tests to verify the functionality of key components like adding, removing, and searching contacts.
+   - Unit tests would ensure correctness, improve maintainability, and prevent regressions when new features are introduced.
 
-2. **Pagination for Large Datasets**: 
+2. **Wildcard or Partial Matching Search**: 
+   - Currently, the search only supports exact matches. Adding partial or wildcard matching (e.g., searching for "Vic*" to match "Victoria" or "Vicky") would make the search more flexible.
+
+3. **Pagination for Large Datasets**: 
    - If the address book contains a large number of entries, displaying all contacts in one view can be overwhelming. Adding pagination to display a fixed number of contacts per page (e.g., 10 at a time) would improve user experience.
 
-3. **Enhanced Input Validation**: 
-   - Implement more comprehensive validation for international phone numbers and address formats, ensuring proper handling of different locales and number formats.
-
 4. **Improved File Format**: 
-   - Transition from a simple comma-separated values (CSV) format to a more structured format like JSON or XML. This would allow easier data parsing and improve extensibility for future features such as nested addresses or contact groups.
+   - Transition from a simple CSV format to a more structured format like JSON or XML. This would allow easier data parsing and improve extensibility for future features such as nested addresses or contact groups.
 
-5. **Search History**: 
-   - Implement a feature that allows users to review or revisit their recent searches, adding convenience for users who frequently search the same terms.
-
-6. **User Interface Enhancements (Non-Console)**: 
+5. **User Interface Enhancements (Non-Console)**: 
    - Explore a graphical interface (GUI) using a C++ framework like Qt to create a more user-friendly visual interface, making the application accessible to users less familiar with the command line.
-
-
