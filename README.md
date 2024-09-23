@@ -1,4 +1,4 @@
-# Address Book CLI - README
+# Address Book - README
 
 ## Overview
 
@@ -77,31 +77,3 @@ Key constraints include unique emails and phone numbers for each contact. The ap
 - **Enhanced File Format**: Move from the current comma-separated values (CSV) format to a more structured format like JSON or XML for better extensibility and data integrity.
 - **Search History**: Implement a feature to allow users to review recent searches.
 
-## Compilation & Execution
-
-### Requirements
-- A C++ compiler supporting at least C++11.
-- Tested in environments like GCC and Visual Studio.
-
-### Compilation
-To compile the program:
-```bash
-g++ -o addressbook AddressBook.cpp
-```
-
-### Running the Program
-Execute the compiled binary:
-```bash
-./addressbook
-```
-
-### Debug Mode (Optional)
-When compiling in debug mode, memory leak detection will be enabled automatically. This is useful for development and testing.
-
-### File Persistence
-- Contacts are saved to a file (`addressbook.txt`) upon program exit.
-- When the program starts, it will load contacts from the same file.
-
-## Summary
-
-This address book project provides a robust and efficient solution for managing contacts in a command-line environment. With careful attention to input validation, case-insensitive search, and memory management, the application meets the core requirements while providing a solid foundation for future improvements.
