@@ -93,7 +93,7 @@ The program ensures that no two contacts share the same email or phone number. A
    - Unit tests would ensure correctness, improve maintainability, and prevent regressions when new features are introduced.
 
 2. **Wildcard or Partial Matching Search**: 
-   - Currently, the search only supports exact matches. Adding partial or wildcard matching (e.g., searching for "Vic*" to match "Victoria" or "Vicky") would make the search more flexible.
+   - Currently, the search only supports exact matches. Adding partial or wildcard matching (e.g., searching for "Vic" to match "Victoria" or "Vicky") would make the search more flexible.
 
 3. **Pagination for Large Datasets**: 
    - If the address book contains a large number of entries, displaying all contacts in one view can be overwhelming. Adding pagination to display a fixed number of contacts per page (e.g., 10 at a time) would improve user experience.
