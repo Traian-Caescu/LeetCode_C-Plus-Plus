@@ -1,128 +1,61 @@
-Here’s a README formatted specifically for GitHub with proper Markdown syntax and formatting, ready for copy-pasting.
+Overview
+This project is a command-line-based address book written in C++. It allows users to manage contacts by adding, removing, searching, and displaying contact information. Each contact contains the following fields:
 
-```markdown
-# Address Book CLI
+First Name
+Other Names
+Email Address
+Phone Number
+Address (Street, Town, Country)
+Key constraints include unique emails and phone numbers for each contact. The application supports file persistence, so records are saved upon exit and loaded when the program is run again.
 
-A command-line-based address book application built in C++ that allows users to manage contacts by adding, removing, searching, and displaying them. Each contact includes **First Name**, **Other Names**, **Email Address**, **Phone Number**, and **Address** (Street, Town, Country). The application ensures email and phone numbers are unique, and persists data between sessions by saving to a file.
-
-## 🚀 Features
-
-- **Add Contact**: Add a new contact, with all fields validated and email/phone numbers required to be unique.
-- **Remove Contact**: Remove a contact using their email address. The removal process can be cancelled if needed.
-- **Search Contact**: Search by:
-  - First Name
-  - Other Names
-  - Email Address
-  - Phone Number
-  - Town
-  - Country
-- **Display All Contacts**: Lists all contacts in a table format.
-- **File Persistence**: Saves contacts to `addressbook.txt` when the program exits, and loads them back on startup.
-- **Memory Leak Detection**: Memory leak detection enabled via CRT for development.
-
-## 📂 Project Structure
-
-```
-├── AddressBook.cpp     # Main C++ file containing all logic
-├── addressbook.txt     # File where contacts are saved and loaded from
-└── README.md           # This README file
-```
-
-## 🔧 Installation and Setup
-
-### Prerequisites
-
-- **C++11** or higher
-- **g++** or any C++ compiler
-- (Optional) **Visual Studio** for memory leak detection in debug mode
-
-### Compilation
-
-To compile the program, use the following command:
-
-```bash
-g++ -o addressbook AddressBook.cpp
-```
-
-### Running
-
-After compiling, run the program:
-
-```bash
-./addressbook
-```
-
-### Debug Mode (Memory Leak Detection)
-
-For debugging purposes, memory leak detection is enabled. This works in environments like Visual Studio and helps ensure efficient memory management.
-
-## 📝 Input Validation
-
-- **Email**: Must contain an `@` and a valid domain.
-- **Phone Number**: Must be numeric and between 7-15 characters. It must also be unique.
-- **Required Fields**: First name, other names, street, town, and country must all be non-empty.
-- **Case Insensitivity**: All inputs are normalized to lowercase for consistent searching and matching.
-
-## ⚡ Key Highlights
-
-1. **Unique Email and Phone**: Both email and phone numbers are enforced as unique to ensure data integrity.
-2. **Robust Input Validation**: Prevents invalid inputs, empty fields, and skips.
-3. **Efficient Searching**: The use of multiple indexes (for first name, phone, etc.) enables faster lookups.
-4. **Persistent Data**: Contacts are saved to `addressbook.txt` on exit and loaded back when the program starts.
-5. **Memory Management**: Memory leaks are detected and debugged using `_CrtDumpMemoryLeaks()` in development.
-
-## 🔍 Challenges & Solutions
-
-### 1. **Duplicate Handling**
-   - **Problem**: Preventing duplicate email and phone entries.
-   - **Solution**: Added checks using `EmailExists` and `PhoneExists` to ensure both fields remain unique.
-
-### 2. **Infinite Loops on Invalid Input**
-   - **Problem**: The program was entering infinite loops if invalid input (like `1 2 3`) was provided.
-   - **Solution**: Replaced input handling with robust validation and `do-while` loops.
-
-### 3. **Case Insensitivity**
-   - **Problem**: Searching was case-sensitive.
-   - **Solution**: All inputs are converted to lowercase using `ToLower` for uniform case-insensitive comparisons.
-
-### 4. **Ensuring Non-Empty Fields**
-   - **Problem**: Users could accidentally leave fields blank.
-   - **Solution**: Required fields like first name, other names, street, etc., are validated to ensure they are not left empty.
-
-### 5. **Phone and Email Uniqueness**
-   - **Problem**: Users could add contacts with the same phone number or email.
-   - **Solution**: Email and phone number uniqueness is strictly enforced with relevant checks.
-
-### 6. **Exit Mechanism in Removal**
-   - **Problem**: Users couldn't cancel the removal process once started.
-   - **Solution**: Added the option to type `'exit'` to cancel the operation during removal.
-
-## 🚀 Future Enhancements
-
-If more time was available, the following improvements would be considered:
-
-1. **Wildcard Search**: Allow partial or wildcard-based searches.
-2. **Pagination**: For better user experience when listing large numbers of contacts.
-3. **International Phone Number Support**: Handle international formats and validation.
-4. **Enhanced File Format**: Switch to a more structured data format (JSON, XML) for better data integrity and flexibility.
-5. **Recent Searches**: Implement a history of recent search terms.
-
-## 🛠️ Tools & Libraries Used
-
-- **Standard C++ STL** (`<unordered_map>`, `<vector>`, `<algorithm>`) – Used for fast lookups, storage, and handling large datasets.
-- **CRT Debugging** (`<crtdbg.h>`) – Enabled memory leak detection in development environments.
-
-## ⚙️ How to Contribute
-
-1. Fork the repository.
-2. Create a new feature branch: `git checkout -b feature/your-feature`.
-3. Commit your changes: `git commit -m 'Add some feature'`.
-4. Push to the branch: `git push origin feature/your-feature`.
-5. Submit a pull request.
-
-## 📝 License
-
-This project is licensed under the MIT License.
-```
-
-This README has been structured to follow GitHub Markdown conventions and includes sections that are formatted with headings, code blocks, and explanations. It's clean and straightforward, giving all the essential information without unnecessary verbosity.
+Features
+Core Functionality
+Add Contact: Collects contact details, validates input, and ensures unique email and phone numbers before adding a new contact.
+Remove Contact: Allows the removal of a contact by their email. If the email is not found, users are prompted to re-enter or cancel the operation.
+Search Contacts: Users can search by:
+First Name
+Other Names
+Email Address
+Phone Number
+Town
+Country
+Display All Contacts: Displays all contacts in a structured table format.
+Save & Load from File: The program automatically saves contacts to a file upon exit and loads them upon startup.
+Memory Leak Detection: Enabled via the C runtime library in debug mode.
+Input Validation
+Email: Must contain an @ symbol and a valid domain.
+Phone Number: Must be numeric and between 7-15 digits. It must also be unique.
+Required Fields: All fields (First Name, Other Names, Street, Town, Country) are mandatory and must not be left empty.
+Case-Insensitive Matching: To avoid case-related issues, all inputs are normalized to lowercase for searches and storage.
+Optimizations
+Fast Lookups: Leveraging std::unordered_map for fast contact retrieval by email and other indexed fields (e.g., first name, phone).
+Multiple Indexes: Indexes for various fields (first name, phone, town, etc.) improve search efficiency, reducing the need to iterate over all contacts.
+Challenges & Solutions
+1. Unique Email and Phone
+Problem: Ensuring no two contacts share the same email or phone number while allowing identical names.
+Solution: Both the email and phone number are checked for uniqueness during contact addition using EmailExists and PhoneExists functions. These enforce unique constraints before a new record is created.
+2. Input Validation & Infinite Loop Prevention
+Problem: Initial versions failed to handle multiple invalid inputs (like 1 2 3) correctly, causing fields to be skipped and left empty. Invalid inputs could also cause infinite loops.
+Solution: Replaced input handling with do-while loops, ensuring valid, non-empty inputs for all required fields. A robust input validation mechanism prevents issues with invalid entries and enforces constraints on email and phone number formats.
+3. Case Insensitivity
+Problem: Inconsistent case handling during searches and comparisons.
+Solution: All inputs are converted to lowercase using a utility function (ToLower) to ensure uniformity in search and storage, allowing for case-insensitive lookups.
+4. Memory Management
+Problem: Memory leaks can occur in a long-running program with frequent contact additions/removals.
+Solution: Enabled memory leak detection with _CrtSetDbgFlag and _CrtDumpMemoryLeaks for development. The program was tested in debug mode to ensure no memory leaks occur when adding, removing, or modifying contacts.
+5. Duplicate Handling
+Problem: Duplicate email or phone entries can corrupt data integrity.
+Solution: Strict uniqueness checks for both email and phone prevent duplicates. If a user attempts to add a contact with an existing email or phone number, they are prompted to re-enter valid, unique details.
+6. Exit Mechanism During Removal
+Problem: If no email is entered during contact removal, the user had no way to cancel.
+Solution: Added a cancellation mechanism allowing the user to type 'exit' during the removal process to stop without making changes.
+7. Search Optimization
+Problem: Searching over a large number of records needs to be efficient.
+Solution: Introduced indexes on multiple fields (firstNameIndex, otherNamesIndex, phoneIndex, etc.) to enable fast lookups, preventing the need for full list traversal.
+Known Limitations & Future Enhancements
+If I Had More Time
+Wildcard Search: Introduce wildcard-based or partial string matching in searches for more flexible user input.
+Pagination for Large Datasets: Add pagination support when displaying large lists of contacts, as the current format may become overwhelming with hundreds or thousands of records.
+Enhanced Validation: Add more robust validation for international phone numbers and address formats.
+Enhanced File Format: Move from the current comma-separated values (CSV) format to a more structured format like JSON or XML for better extensibility and data integrity.
+Search History: Implement a feature to allow users to review recent searches.
