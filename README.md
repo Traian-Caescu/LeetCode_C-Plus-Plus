@@ -26,7 +26,7 @@ Key constraints include unique emails and phone numbers for each contact. The ap
    - Country
 4. **Display All Contacts**: Displays all contacts in a structured table format.
 5. **Save & Load from File**: The program automatically saves contacts to a file upon exit and loads them upon startup.
-6. **Memory Leak Detection**: Enabled via the C runtime library in debug mode.
+6. **Memory Leak Detection**: Enabled via the C++ runtime library in debug mode.
 
 ### Input Validation
 - **Email**: Must contain an `@` symbol and a valid domain.
