@@ -4,7 +4,7 @@ Memory: 9.35 MB, less than 8.14% of C++ online submissions.
 */
 
 class Solution {
-public:
+public: 
     string smallestSubsequence(string s) {  
         stack<char>st; 
         unordered_set<char>seen;
