@@ -26,7 +26,7 @@ public:
            } 
             i++;
         } 
-        string track="";
+        string track=""; 
         while(!st.empty()){
             track.push_back(st.top());
             st.pop();
