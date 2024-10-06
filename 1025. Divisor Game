@@ -5,7 +5,7 @@ Memory: 7.30 MB, less than 86.21% of C++ online submissions.
 
 class Solution {
 public: 
-    bool divisorGame(int n) { 
+    bool divisorGame(int n) {  
         return n % 2 == 0;
           
     } 
