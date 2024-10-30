@@ -5,7 +5,7 @@ Memory: 7.43 MB, less than 34.69% of C++ online submissions.
 
 class Solution {
 public:  
-    int fib(int n) { 
+    int fib(int n) {  
         if (n <= 1){
             return n; 
         }   
