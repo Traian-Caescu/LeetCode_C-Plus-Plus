@@ -3,7 +3,7 @@ Runtime: 81 ms, faster than 84.92% of C++ online submissions.
 Memory: 61.46 MB, less than 52.60% of C++ online submissions.
 */
 
-class Solution {
+class Solution { 
 public:
     int findKthLargest(vector<int>& nums, int k) { 
        priority_queue<int, vector<int>, greater<int>> minHeap; 
