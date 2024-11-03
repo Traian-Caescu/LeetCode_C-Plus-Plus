@@ -6,7 +6,7 @@ Memory: 61.46 MB, less than 52.60% of C++ online submissions.
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-       priority_queue<int, vector<int>, greater<int>> minHeap;
+       priority_queue<int, vector<int>, greater<int>> minHeap; 
         
         for (int num : nums) {
             if (minHeap.size() < k) {
